@@ -1,0 +1,133 @@
+<mxfile host="app.diagrams.net" modified="2024-05-31T12:44:18.539Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="4u1YbQwQp3M8QH3mJ8T4" version="24.5.3">
+  <diagram name="Page-1" id="XIDxQwK6hxTQ9Gx8P9hI">
+    <mxGraphModel dx="1922" dy="1209" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- START -->
+        <mxCell id="start" value="Start: User arrives at login page" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="300" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- LOGIN METHOD SELECTION -->
+        <mxCell id="loginMethod" value="Select Login Method:&#xa;- Social (Google/LinkedIn)&#xa;- SSO&#xa;- Email/Password&#xa;- Create Account" style="parallelogram;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="290" y="140" width="140" height="100" as="geometry" />
+        </mxCell>
+        
+        <!-- CONNECT START TO LOGIN METHOD -->
+        <mxCell id="edge1" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="start" target="loginMethod">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- SOCIAL LOGIN BRANCH -->
+        <mxCell id="social" value="Social Sign-In Selected" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="100" y="280" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- SSO BRANCH -->
+        <mxCell id="sso" value="SSO Selected" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="300" y="280" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- EMAIL/PASSWORD BRANCH -->
+        <mxCell id="emailPass" value="Email/Password Selected" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="500" y="280" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- CREATE ACCOUNT BRANCH -->
+        <mxCell id="createAcc" value="Create Account Selected" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="300" y="400" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- CONNECT LOGIN METHOD TO BRANCHES -->
+        <mxCell id="edge2" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="loginMethod" target="social">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="loginMethod" target="sso">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="loginMethod" target="emailPass">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;dashed=1;" edge="1" parent="1" source="loginMethod" target="createAcc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- SOCIAL LOGIN FLOW -->
+        <mxCell id="socialRedirect" value="Redirect to OAuth Provider" style="rectangle;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="socialValidate" value="Validate OAuth Token" style="rectangle;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="500" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="socialValid" value="Valid Token?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="80" y="600" width="160" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- CONNECT SOCIAL BRANCH -->
+        <mxCell id="edge6" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="social" target="socialRedirect">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="socialRedirect" target="socialValidate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="socialValidate" target="socialValid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- YES/NO FROM SOCIAL VALIDATION -->
+        <mxCell id="socialYes" value="Fetch User Email" style="rectangle;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="30" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="socialNo" value="Show Error" style="rectangle;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="170" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="edge9" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="socialValid" target="socialYes">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="680" as="sourcePoint" />
+            <mxPoint x="90" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge10" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="socialValid" target="socialNo">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="680" as="sourcePoint" />
+            <mxPoint x="230" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- END NODE -->
+        <mxCell id="end" value="User Authenticated&#xa;Redirect to Dashboard" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="300" y="900" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- CONNECT SOCIAL YES TO MFA CHECK -->
+        <mxCell id="socialAccountCheck" value="Account Exists in DB?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="30" y="820" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="edge11" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="socialYes" target="socialAccountCheck">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- SOCIAL ACCOUNT CHECK PATHS -->
+        <mxCell id="socialAccountYes" value="Proceed to MFA" style="rectangle;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="30" y="940" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="socialAccountNo" value="Redirect to Account Creation" style="rectangle;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="170" y="940" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="edge12" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="socialAccountCheck" target="socialAccountYes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge13" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="socialAccountCheck" target="socialAccountNo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- CONNECT TO END -->
+        <mxCell id="edge14" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="socialAccountYes" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
